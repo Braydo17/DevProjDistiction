@@ -3,12 +3,12 @@ function checkName() {
 	var Lname_msg=document.getElementById("name_msg");
 	var letters = /^[A-Za-z]+$/;
 
-	if (Lname.value.length > 15) {
-		name_msg.textContent = "Please choose max 20 characters for the name";
+	if (Lname.value.length > 20) {
+		Lname_msg.textContent = "Please choose 20 characters max for the name";
 		return false;
 	}
   if (letters.test(Lname.value) == false) {
-  		Lname_msg.textContent="Alphabets only";
+  		Lname_msg.textContent="Please enter alphabets only without space";
   		return false;
   } else {
   		Lname_msg.textContent="";
@@ -20,12 +20,14 @@ var phone=document.getElementById("phone");
 var phone_msg=document.getElementById("phone_msg");
 var phoneRE = /^\(\d\d\) \d\d\d\d-\d\d\d\d$/;
 
-  if (!phone.value.match(phoneRE)) {
-    phone_msg.textContent="Your phone numb is not valid";
+  if (!phone.value.match(phoneRE)) 
+  {
+    phone_msg.textContent="Please enter a valid phone number";
     return false;
-  } else {
+  } else 
+  {
     phone_msg.textContent="";
-    }
+  }
 }
 
 function checkEmail() {
@@ -33,12 +35,14 @@ var email=document.getElementById("email").value;
 var email_msg=document.getElementById("email_msg");
 var atpos = email.indexOf("@");
 var dotpos = email.lastIndexOf(".");
-    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=email.length) {
-    email_msg.textContent="Please enter a valid email";
-    return false;
-  } else {
-    email_msg.textContent="";
-  }
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2>=email.length) 
+	{
+       email_msg.textContent="Please enter a valid email";
+       return false;
+    } else 
+	{
+      email_msg.textContent="";
+    }
 }
 
 function checkDesc()
@@ -47,14 +51,17 @@ function checkDesc()
 	var desc_msg=document.getElementById("desc_msg");
 	var letters = /^[A-Za-z]+$/;
 
-	if (desc.value.length > 20) {
-		name_msg.textContent = "Please choose max 20 characters for the name";
+	if (desc.value.length > 20) 
+	{
+		name_msg.textContent = "Please choose 20 characters max for the name";
 		return false;
 	}
-  if (letters.test(desc.value) == false) {
-  		desc_msg.textContent="Alphabets only";
+    if (letters.test(desc.value) == false) 
+	{
+  		desc_msg.textContent="Please enter alphabets only without space";
   		return false;
-  } else {
+    } else 
+	{
   		desc_msg.textContent="";
 	}
 }
